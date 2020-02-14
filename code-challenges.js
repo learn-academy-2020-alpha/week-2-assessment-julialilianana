@@ -3,6 +3,14 @@
 // --------------------1) Create a function that takes a number as an argument and decides if the number is evenly divisble by three or not.
 // Use the test variables provided.
 
+const divByThree = (num) => {
+    if (num % 3 === 0) {
+        return `${num} is divisble by three`
+    } else {
+        return `${num} is not divisible by three`
+    }
+}
+
 var num1 = 15
 // Expected output: "15 is divisible by three"
 
@@ -12,7 +20,9 @@ var num2 = 0
 var num3 = -7
 // Expected output: "-7 is not divisble by three"
 
-
+console.log(divByThree(num1))
+console.log(divByThree(num2))
+console.log(divByThree(num3))
 
 
 
@@ -21,7 +31,13 @@ var num3 = -7
 var randomNouns = ["streetlamp", "potato", "teeth", "conclusion", "nephew", "temperature", "database"]
 // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew", "Temperature", "Database"]
 
-
+const capitalized = (array) => {
+    let capArr = array.map(value => {
+        return value[0].toUpperCase() + value.substring(1)
+    })
+    return capArr
+}
+ console.log(capitalized(randomNouns))   
 
 
 
@@ -30,17 +46,28 @@ var randomNouns = ["streetlamp", "potato", "teeth", "conclusion", "nephew", "tem
 var mixedDataArray = [true, 8, "hello", 90, -8, null, 0, 46, 59, 107, "hey!"]
 // Expected output: [-8, 0, 8, 46, 59, 90, 107]
 
+const numbersOnly = (array) => {
+    let onlyNum = array.filter(value => typeof value === "number")
+     return onlyNum.sort(function(a, b){return a-b})
+}
 
-
-
+console.log(numbersOnly(mixedDataArray))
 
 // --------------------4) Create a function that takes in a string and logs the index of the first vowel.
 // Use the test variables provided.
 
 var vowelTester1 = "learn"
 // Expected output: 1
-var vowelTester1 = "throw"
+var vowelTester2 = "throw"
 // Expected output: 3
+
+
+const indexOfVowel = (string) => {
+    return 
+}
+
+console.log(indexOfVowel(vowelTester1))
+console.log(indexOfVowel(vowelTester2))
 
 
 
