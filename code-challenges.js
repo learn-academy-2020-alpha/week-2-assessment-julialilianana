@@ -56,14 +56,22 @@ console.log(numbersOnly(mixedDataArray))
 // --------------------4) Create a function that takes in a string and logs the index of the first vowel.
 // Use the test variables provided.
 
+
 var vowelTester1 = "learn"
-// Expected output: 1
+// // Expected output: 1
 var vowelTester2 = "throw"
-// Expected output: 3
+// // Expected output: 3
 
 
-const indexOfVowel = (string) => {
-    return 
+const indexOfVowel = (str) => {
+    let newArr = str.split("")
+    for(var i=0; i<newArr.length; i++){
+        if( newArr[i] === "a" ||  newArr[i] === "e" ||  newArr[i] === "i" ||  newArr[i] === "o" ||  newArr[i] === "u"){
+            var finalAnswer = newArr.indexOf(i)
+        } 
+    }
+    return finalAnswer
+   
 }
 
 console.log(indexOfVowel(vowelTester1))
@@ -74,18 +82,31 @@ console.log(indexOfVowel(vowelTester2))
 
 
 
+
 // --------------------5) Create a function that takes three arguments - two numbers and a mathematical operation (+, -, *, /) and performs the given calculation. If the input tries to divide by 0, return: "Can't divide by 0!"
 
 
-
+const calculator = (number1, operation, number2) => {
+    if (operation === "+") {
+        return number1 + number2
+    } else if (operation === "-"){
+        return number1 - number2
+    } else if (operation === "*"){
+        return number1 * number2
+    } else if (operation === "/" && number2 !== 0){
+        return number1 / number2
+    } else if (operation === "/" && number2 === 0) {
+        return "Can't divide by 0!"
+    }
+}
 
 
 // Uncomment and use the following console logs to test your function
-// console.log(calculator(3, "*" 9))
+console.log(calculator(3, "*", 9))
 // Expected output: 27
 
-// console.log(calculator(16, "+" 3))
+console.log(calculator(16, "+", 3))
 // Expected output: 19
 
-// console.log(calculator(89, "/" 0))
+console.log(calculator(89, "/", 0))
 // Expected output: "Can't divide by 0!"
